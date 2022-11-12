@@ -1,0 +1,11 @@
+.ul{
+
+}
+
+.ul__li{
+
+}
+
+.ul__li--done{
+    text-decoration: line-through;
+}
