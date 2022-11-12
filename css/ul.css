@@ -9,3 +9,30 @@
 .ul__li--done{
     text-decoration: line-through;
 }
+
+.ul__button{
+    width: 30px;
+    height: 30px;
+    border-style: none;
+    background-color: hsl(120, 100%, 25%);
+}
+
+.ul__button:hover{
+    background-color: hsl(120, 100%, 30%);
+}
+
+.ul__button:active{
+    background-color: hsl(120, 100%, 35%);
+}
+
+.ul__button--remove{
+    background-color: hsl(348, 83%, 47%);
+}
+
+.ul__button--remove:hover{
+    background-color: hsl(348, 83%, 52%);
+}
+
+.ul__button--remove:active{
+    background-color: hsl(348, 83%, 57%);
+}
