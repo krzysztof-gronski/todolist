@@ -24,6 +24,7 @@
     background-color: hsl(120, 100%, 25%);
     color: white;
     padding: 0px;
+    text-decoration: none;
 }
 
 .ul__button:hover{

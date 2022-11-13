@@ -53,10 +53,10 @@
         let htmlString = "";
         for (const task of tasks) {
             htmlString += `
-        <li class="ul__li ${task.done ? "ul__li--done\"" : "\""}>  
+        <li class="ul__li">  
         <button class="ul__button js-done"></button>
-        ${task.content}
-        <button class="ul__button ul__button--remove js-remove">X</button>
+        <span ${task.done ? "class=\"ul__li--done\"" : ""}>${task.content}</span>
+        <button class="ul__button ul__button--remove js-remove">🗑</button>
         </li>
         `;
         }
@@ -66,7 +66,7 @@
 
         const toggleDoneButtons = document.querySelectorAll(".js-done");
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
-            if(tasks[index].done){toggleDoneButton.textContent="V"};
+            if(tasks[index].done){toggleDoneButton.innerHTML="&#10004"};
 
         });
 
