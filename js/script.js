@@ -53,7 +53,7 @@
         let htmlString = "";
         for (const task of tasks) {
             htmlString += `
-        <li class="ul__li${task.done ? "--done\"" : "\""}>  
+        <li class="ul__li ${task.done ? "ul__li--done\"" : "\""}>  
         <button class="ul__button js-done"></button>
         ${task.content}
         <button class="ul__button ul__button--remove js-remove">X</button>
