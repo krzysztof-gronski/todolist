@@ -5,10 +5,9 @@
 }
 
 .section__header{
-    font-size: 20px;
-    padding: 20px;
     margin: 0;
     border-bottom: 1px solid #ddd;
+    padding: 20px;
 }
 
 .section__body
