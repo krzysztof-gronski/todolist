@@ -1,6 +1,6 @@
 
 # **TO DO LIST**
-![portrait](img/portrait.jpg)
+
 ## Description
 A handy list used to save scheduled tasks. Allows you to add, delete and mark tasks as completed.
 
