@@ -20,13 +20,37 @@
     background: hsl(180, 100%, 25%);
     color: white;
     border: none;
+    transition: 1s;
 }
 
-.form__button:hover{
+.form__button--hidden{
+    display: block;
+}
+
+.form__button--listHeader{
+    color: hsl(180, 100%, 25%);
+    border: none;
+    background: rgba(255, 255, 255, 0);
+    padding: 0;
+}
+
+.form__button--listHeader:hover{
+    color: hsl(180, 100%, 30%);
+    cursor: pointer;
+}
+
+.form__button--input:hover{
     background: hsl(180, 100%, 30%);
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
-.form__button:active{
+.form__button--listHeader:disabled{
+    color: gray;
+    cursor: not-allowed;
+}
+
+.form__button--input:active{
     padding: 10px;
     background: hsl(180, 100%, 35%);
     color: white;

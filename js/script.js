@@ -1,4 +1,3 @@
-let x=4;
 
 {
 
@@ -33,6 +32,20 @@ let x=4;
         render();
     };
 
+    const allDone = () => {
+        tasks=tasks.map((task)=>({
+        ...task,
+        done: true,
+    }));
+    console.log("alldone");
+        render();
+    };
+
+    const hideDone = () => {
+        hideDoneTasks=!hideDoneTasks;
+        render();
+    };
+
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButton, index) => {
@@ -40,7 +53,7 @@ let x=4;
                 removeTask(index);
             })
 
-        })
+        });
         const toggleDoneButtons = document.querySelectorAll(".js-done");
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
             toggleDoneButton.addEventListener("click", () => {
@@ -51,6 +64,22 @@ let x=4;
     };
 
     const bindButtonsEvents = () => {
+        const hideDoneButton = document.querySelector(".js-hideDoneButton");
+        if(hideDoneButton){
+            hideDoneButton.addEventListener("click", () => {
+                hideDone();
+            });
+        }
+        
+        const allDoneButton = document.querySelector(".js-allDoneButton");
+        if(hideDoneButton){
+            allDoneButton.addEventListener("click", () => {
+                allDone();
+            });
+        }
+        
+
+        
 
     };
 
@@ -71,9 +100,10 @@ let x=4;
 
     const renderTasks = () => {
         let htmlString = "";
+        const liClasses = hideDoneTasks ? "ul__li--hidden\"" : "\"";
         for (const task of tasks) {
             htmlString += `
-        <li class="ul__li">  
+        <li class="ul__li ${task.done ? liClasses : "\""}>  
         <button class="ul__button js-done"></button>
         <span ${task.done ? "class=\"ul__li--done\"" : ""}>${task.content}</span>
         <button class="ul__button ul__button--remove js-remove">🗑</button>
@@ -87,7 +117,15 @@ let x=4;
     };
 
     const renderButtons = () => {
-
+        let htmlString = "";
+        if(tasks.length)
+        {
+            htmlString=`
+            <button class="form__button form__button--listHeader js-hideDoneButton">${hideDoneTasks ? "Pokaż ukończone":"Ukryj ukończone"}</button>
+            <button class="form__button form__button--listHeader js-allDoneButton" ${tasks.every(({ done }) => done) ? "disabled" : ""}>Ukończ wszystkie</button>
+            `;
+        }
+        document.querySelector(".js-headerButtons").innerHTML = htmlString;
     };
 
 

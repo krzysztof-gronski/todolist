@@ -17,6 +17,10 @@
     text-decoration: line-through;
 }
 
+.ul__li--hidden{
+    display: none;
+}
+
 .ul__button{
     width: 30px;
     height: 30px;
@@ -25,14 +29,16 @@
     color: white;
     padding: 0px;
     text-decoration: none;
+    transition: 1s;
 }
 
 .ul__button:hover{
-    background-color: hsl(120, 100%, 30%);
+    background-color: hsl(120, 100%, 35%);
+    cursor: pointer;
 }
 
 .ul__button:active{
-    background-color: hsl(120, 100%, 35%);
+    background-color: hsl(120, 100%, 40%);
 }
 
 .ul__button--remove{
@@ -40,9 +46,9 @@
 }
 
 .ul__button--remove:hover{
-    background-color: hsl(348, 83%, 52%);
+    background-color: hsl(348, 83%, 57%);
 }
 
 .ul__button--remove:active{
-    background-color: hsl(348, 83%, 57%);
+    background-color: hsl(348, 83%, 62%);
 }

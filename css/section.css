@@ -1,16 +1,47 @@
-.section{
+.section {
+    display: grid;
     margin: 10px 0;
     background: white;
     box-shadow: 0 0 5px #ddd;
 }
 
-.section__header{
+.section__header {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
     margin: 0;
     border-bottom: 1px solid #ddd;
     padding: 20px;
 }
 
-.section__body
-{
+@media (max-width: 767px) {
+    .section__header {
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+}
+
+.section__h2--listHeader {
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+
+.headerButtons {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 30px;
+}
+
+@media (max-width: 767px) {
+    .headerButtons {
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+}
+
+.section__body {
     padding: 20px;
+    margin: 0;
 }
